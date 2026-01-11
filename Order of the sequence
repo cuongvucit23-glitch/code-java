@@ -1,0 +1,35 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //độ dài mảng
+        int n = sc.nextInt();
+        int[] array = new int[n];
+        
+        for (int i=0;i<n;i++) {
+            array[i] = sc.nextInt();
+        }
+        boolean increasing = true;
+        boolean decreasing = true;
+        for (int i=1;i<n;i++) {
+            if (array[i]>array[i-1]) {
+                decreasing = false;
+            } else if (array[i]<array[i-1]) {
+                increasing = false;
+            } else {
+                 decreasing = false;
+                  decreasing = false;
+            }
+        }
+        if (increasing) {
+            System.out.println("increasing");
+        } else if (decreasing) {
+            System.out.println("decreasing");
+        } else {
+            System.out.println("none");
+        }
+        sc.close();
+    }
+}
