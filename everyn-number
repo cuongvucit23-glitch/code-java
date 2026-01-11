@@ -1,0 +1,48 @@
+//11/1/2026
+//Vu Duc Cuong
+//kiem tra mang co du phan tu tu m...n hay khong?
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt(); // số test case
+
+        // lặp qua từng test case
+        for (int test = 0; test < T; test++) {
+
+            int m = sc.nextInt(); // số phần tử mảng
+            int n = sc.nextInt(); // cần kiểm tra đủ 1..n hay không
+
+            // mảng kiểm tra số đã xuất hiện hay chưa
+            boolean[] hasNumber = new boolean[n + 1];
+
+            // đọc m số
+            for (int i = 0; i < m; i++) {
+                int x = sc.nextInt();
+                if (x >= 1 && x <= n) {
+                    hasNumber[x] = true;
+                }
+            }
+
+            // kiểm tra có thiếu số nào không
+            boolean isFull = true;
+            for (int i = 1; i <= n; i++) {
+                if (!hasNumber[i]) {
+                    isFull = false;
+                    break;
+                }
+            }
+
+            // in kết quả
+            if (isFull) {
+                System.out.println("Yes");
+            } else {
+                System.out.println("No");
+            }
+        }
+
+        sc.close();
+    }
+}
